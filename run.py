@@ -265,7 +265,7 @@ def main():
     post_poor = []
     for index, item in enumerate(link_list):
         link = item.get('href')
-        name = item.find('span',{'class':'flink-sitename'}).text
+        name = link_list.find('span').text
         try:
             img = imglist[index].get('data-lazy-src')
             print(img)
