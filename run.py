@@ -265,7 +265,13 @@ def main():
     post_poor = []
     for index, item in enumerate(link_list):
         link = item.get('href')
-        name = item.find_all('span')[0].text
+        namelist = item.find('span')
+        try:
+          name = namelist.text
+          print(name)
+        except:
+            print('出错了')
+            continue
         try:
             img = imglist[index].get('data-lazy-src')
             print(img)
